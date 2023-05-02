@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "pre_mfa-RO_policy" {
-    name = "activate-mfa-policy-2"
+    name = "activate-mfa-policy-fls"
     policy = jsonencode({
         Version = "2012-10-17"
         Statement = [
