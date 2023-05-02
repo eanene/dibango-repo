@@ -1,6 +1,6 @@
 # Terraform AWS Readonly IAM User Module
 
-This module creates read-only IAM users in AWS and assigns them to a group, along with the necessary policies attached to the users to provide them with read-only access.
+This module creates read-only IAM users in AWS Cloud and assigns them to a group, along with the necessary policies attached to the users to provide them with read-only access.
 
 ## Usage
 
