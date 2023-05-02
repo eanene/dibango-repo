@@ -10,23 +10,23 @@ resource "aws_iam_user" "IAM-ro-users" {
 }
 
 resource "aws_iam_group_policy_attachment" "policy_attachment" {
-  group       = aws_iam_group.RO_Group.name
+  group       = aws_iam_group.RO_Group1.name
   policy_arn  = "arn:aws:iam::aws:policy/ReadOnlyAccess"
 }
 
-resource "aws_iam_group" "RO_Group" {
-  name = "RO-Group"
+resource "aws_iam_group" "RO_Group1" {
+  name = "RO-Group1"
 }
 
-resource "aws_iam_group_membership" "RO_Group" {
+resource "aws_iam_group_membership" "RO_Group1" {
   for_each = aws_iam_user.IAM-ro-users
   users    = [each.value.name]
-  name     = "RO_Group"
-  group    = aws_iam_group.RO_Group.name
+  name     = "RO_Group1"
+  group    = aws_iam_group.RO_Group1.name
 }
 
 resource "aws_iam_group_policy_attachment" "pre_mfa-RO_policy" {
-  group = aws_iam_group.RO_Group.name
+  group = aws_iam_group.RO_Group1.name
   policy_arn = aws_iam_policy.pre_mfa-RO_policy.arn
 }
 
