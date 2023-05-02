@@ -3,3 +3,8 @@ variable "IAM-ro-users" {
   default = ["emadu@gmail.com", "dibangox@gmail.com"]
 }
 
+variable "version" {
+  type = string
+  default = "1.0.0"
+}
+
