@@ -1,3 +1,3 @@
 output "password" {
-    value = modules.iam_user_ro_dev
+    value = module.dibangox_ro_users
 }
