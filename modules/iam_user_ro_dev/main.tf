@@ -23,7 +23,7 @@ resource "aws_iam_group_policy_attachment" "policy_attachment" {
 }
 
 resource "aws_iam_group" "RO_Group1" {
-  name = "RO-Group1"
+  name = var.iam_group_name
 }
 
 resource "aws_iam_group_membership" "RO_Group1" {
