@@ -1,9 +1,9 @@
 terraform {
     cloud {
-        hostname = ""
-        organization = ""
+        hostname = "app.terraform.io"
+        organization = "flashinfong"
         workspace {
-            name = ""
+            name = "dibango-repo"
         }
     }
 }

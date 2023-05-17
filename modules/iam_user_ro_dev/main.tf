@@ -35,7 +35,7 @@ resource "aws_iam_group_membership" "RO_Group1" {
 
 resource "aws_iam_group_policy_attachment" "pre_mfa-RO_policy" {
   group = aws_iam_group.RO_Group1.name
-  policy_arn = aws_iam_policy.pre_mfa-RO_policy.arn
+  policy_arn = aws_iam_policy.pre_mfa-RO_policy2.arn
 }
 
 resource "aws_iam_user_login_profile" "new_user_login" {
@@ -53,7 +53,7 @@ resource "aws_iam_account_password_policy"  "strict" {
     allow_users_to_change_password  = true
 }
 
-resource "aws_iam_policy" "pre_mfa-RO_policy" {
+resource "aws_iam_policy" "pre_mfa-RO_policy2" {
     name = "activate-mfa-policy-fls"
     policy = jsonencode({
         Version = "2012-10-17"
