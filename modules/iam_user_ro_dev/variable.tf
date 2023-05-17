@@ -28,7 +28,3 @@ variable "dynamic_policy" {
 variable "region" {}
 
 
-
-
-
-["emadu@gmail.com", "dibangox@gmail.com"]
