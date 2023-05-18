@@ -26,11 +26,11 @@ resource "aws_iam_group" "RO_Group1" {
   name = var.iam_group_name
 }
 
-resource "aws_iam_group_membership" "RO_Group1" {
-  for_each = aws_iam_user.IAM-ro-users
-  users    = [each.value.name]
-  name     = var.iam_group_name
-  group    = aws_iam_group.RO_Group1.name
+resource "aws_iam_user_group_membership" "RO_Group1" {
+  for_each = toset(var.IAM-ro-users)
+  user    = aws_iam_user.IAM-ro-users[each.key].name
+  # name     = var.iam_group_name
+  groups    = [aws_iam_group.RO_Group1.name]
 }
 
 resource "aws_iam_group_policy_attachment" "pre_mfa-RO_policy" {
